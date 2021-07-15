@@ -1,0 +1,16 @@
+.profiles-container{
+  width: 100%;
+  background-color: cadetblue;
+}
+.get-btn{
+  padding: 5px;
+  cursor: pointer;
+  width: 100px;
+  border: none;
+  margin: 0 auto;
+  display: block;
+  outline: none;
+  &:hover{
+    padding: 10px;
+  }
+}
