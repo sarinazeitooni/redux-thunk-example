@@ -20,6 +20,10 @@ const UserReducer = (state = initialUserState , action)=>{
             loading: false,
             error: action.payload
         }
+        default :
+            return {
+
+            }
     }
 }
 export default UserReducer;

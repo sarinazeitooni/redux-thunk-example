@@ -1,16 +1,21 @@
 import Profiles from "./components/profiles";
 import axios from "axios";
-import {useState} from "react";
+import React from 'react'
 
 function App() {
-    const [user, setuser] = useState('');
-    const person = axios.get('https://jsonplaceholder.typicode.com/users').then((res)=>{
-        // setuser(res.data)
+    let user;
+    axios.get('https://jsonplaceholder.typicode.com/users').then((res)=>{
+       user = res.data;
+       console.log(user);
     })
     return (
         <div className="App">
-            {console.log(user)}
             <button className='get-btn'>get users</button>
+            {user.map((person) => {
+                return (
+                    <Profiles id={person.id} name={person.name} username={person.username}/>
+                )
+            })}
         </div>
     );
 }
